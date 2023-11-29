@@ -8,17 +8,17 @@ const AccountRecoveryPage = ({ navigation }) => {
 
     return (
     <View style={MainStyles.container}>
-      <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
+      <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       <Text style={styles.textTitle}>Restore Password</Text>
       <TextInput style={MainStyles.input} placeholder="Email" onChangeText={setEmail} />
       
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Login'); Alert.alert('Account recovery successful!') }} >
-        <Text style={MainStyles.textColor}>SEND RESET CODE</Text>
+      onPress={() => {navigation.navigate('Login'); Alert.alert('Recovery code has been sent!') }} >
+        <Text style={MainStyles.textColor}>Send Recovery Code</Text>
       </TouchableOpacity>
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Login')} >
-        <Text>BACK TO LOGIN</Text>
+        <Text>Return</Text>
       </TouchableOpacity>
     </View>
   );
@@ -26,11 +26,11 @@ const AccountRecoveryPage = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   textTitle:{
-    fontSize: 28,
+    fontSize: 22,
     fontWeight: '800',
-    color: '#1e90ff',
+    color: '#000',
     textAlign: 'center',
-    marginBottom: 25,
+    marginBottom: 20,
 },
 });
 

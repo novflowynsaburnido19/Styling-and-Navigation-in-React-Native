@@ -6,17 +6,14 @@ import MainStyles from '../components/config/styles';
 const LandingPage = ({ navigation }) => {
     return (
     <View style={MainStyles.container}>
-      <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
-      <Text style={styles.textTitle}>Alpha</Text>
-      <Text style={styles.textBody}>The easiest way to start up your day.</Text>
-      
+      <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       <TouchableOpacity style={MainStyles.buttonvis} 
       onPress={() => navigation.navigate('Login')}>
-        <Text style={MainStyles.textColor}>LOGIN</Text>
+        <Text style={MainStyles.textColor}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Register')}>
-        <Text>SIGN UP</Text>
+        <Text>Sign up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -26,7 +23,7 @@ const styles = StyleSheet.create({
   textTitle:{
     fontSize: 28,
     fontWeight: '800',
-    color: '#1e90ff',
+    color: '#000',
     textAlign: 'center',
     marginBottom: 10,
   },

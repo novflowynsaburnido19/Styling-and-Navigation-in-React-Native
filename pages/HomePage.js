@@ -5,12 +5,11 @@ import MainStyles from '../components/config/styles';
 const HomePage = ({ navigation }) => {
   return (
     <View style={MainStyles.container}>
-      <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
-      <Text style={styles.textTitle}>Let's Start</Text>
-      <Text style={styles.textBody}>Welcome to your personal space.</Text>
+      <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
+      <Text style={styles.textBody}>"Welcome to a Gallery of Multimedia Masterpiece"</Text>
       <TouchableOpacity style={MainStyles.buttonvis} 
       onPress={() => navigation.navigate('Landing')} >
-        <Text style={MainStyles.textColor}>LOGOUT</Text>
+        <Text style={MainStyles.textColor}>Home</Text>
       </TouchableOpacity>
     </View>
   );
@@ -22,10 +21,11 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: '#1e90ff',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   textBody:{
-    fontSize: 16,
+    fontSize: 17,
+    fontWeight: 'bold',
     color: '#000',
     textAlign: 'center',
     marginBottom: 40,

@@ -6,31 +6,33 @@ import MainStyles from '../components/config/styles';
 const LoginPage = ({ navigation }) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const forgotPass = () => {console.log('forgot password is pressed');
+    navigation.navigate('AccountRecovery');
+    };
   
     return (
     <View style={MainStyles.container}>
-      <Image style={MainStyles.logo} source={require('../assets/JMGH4wX.png')} />
-      <Text style={styles.textTitle}>Welcome Back!</Text>
+      <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       <TextInput style={MainStyles.input} 
       placeholder="Email" onChangeText={setEmail} />
       <TextInput style={MainStyles.input} 
       placeholder="Password" onChangeText={setPassword} secureTextEntry />
       
+      <TouchableOpacity onPress={forgotPass}>
+        <Text style={styles.forgotpassButton}>Forgot Password</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Home'); Alert.alert('Successfully logged in!') }} >
-        <Text style={MainStyles.textColor}>LOGIN</Text>
+      onPress={() => {navigation.navigate('Home')}} >
+        <Text style={MainStyles.textColor}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Register')} >
-        <Text>SIGN UP</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={MainStyles.buttoninvis} 
-      onPress={() => navigation.navigate('AccountRecovery')} >
-        <Text>RECOVER ACCOUNT</Text>
-      </TouchableOpacity>
+        <Text>Sign up</Text>
+      </TouchableOpacity> 
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Landing')} >
-        <Text>BACK TO MAIN</Text>
+        <Text>Home</Text>
       </TouchableOpacity>
     </View>
   );
@@ -43,6 +45,11 @@ const styles = StyleSheet.create({
     color: '#1e90ff',
     textAlign: 'center',
     marginBottom: 25,
+},
+forgotpassButton:{
+  fontWeight: 'bold',
+  textDecorationLine: 'underline',
+  fontSize: 12,
 },
 });
 

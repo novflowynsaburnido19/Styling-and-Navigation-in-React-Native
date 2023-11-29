@@ -17,7 +17,7 @@ const MainStyles = {
       borderRadius: 5,
     },
     buttonvis: {
-      backgroundColor: '#1e90ff',
+      backgroundColor: '#000',
       alignItems: 'center',
       justifyContent: 'center',
       marginVertical: 8,
@@ -39,10 +39,9 @@ const MainStyles = {
       borderRadius: 9,
     },
     logo: {
-      width: 150,
+      width: 250,
       height: 150,
       alignSelf: 'center',
-      marginBottom: 10,
     },
    };
 
