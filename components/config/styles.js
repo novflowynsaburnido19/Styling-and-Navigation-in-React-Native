@@ -43,6 +43,11 @@ const MainStyles = {
       height: 150,
       alignSelf: 'center',
     },
+    errorTxt: {
+      width: 250,
+      height: 150,
+      alignSelf: 'center',
+    },
    };
 
    export default MainStyles;
