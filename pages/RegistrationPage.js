@@ -35,7 +35,8 @@ const RegistrationPage = ({ navigation }) => {
       <Text style={styles.textTitle}>Create Account</Text>
       
       <TextInput style={MainStyles.input} 
-      placeholder="Name" 
+      placeholder="Name"
+      autoCapitalize={false} 
       value={values.name}
       onChangeText={handleChange('name')}
       onBlur={() => setFieldTouched('name')}
@@ -45,7 +46,9 @@ const RegistrationPage = ({ navigation }) => {
       )}
 
       <TextInput style={MainStyles.input} 
-      placeholder="Email" value={values.email}
+      placeholder="Email" 
+      autoCapitalize={false}
+      value={values.email}
       onChangeText={handleChange('email')}
       onBlur={() => setFieldTouched('email')}
       />
@@ -54,7 +57,9 @@ const RegistrationPage = ({ navigation }) => {
       )}
 
       <TextInput style={MainStyles.input} 
-      placeholder="Password" secureTextEntry 
+      placeholder="Password" 
+      autoCapitalize={false}
+      secureTextEntry 
       value={values.password}
       onChangeText={handleChange('password')}
       onBlur={() => setFieldTouched('password')}

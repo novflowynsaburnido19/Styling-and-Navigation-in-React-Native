@@ -34,7 +34,8 @@ const LoginPage = ({ navigation }) => {
       
       
       <TextInput style={MainStyles.input} 
-      placeholder="Email" value={values.email}
+      placeholder="Email" autoCapitalize={false}
+      value={values.email}
       onChangeText={handleChange('email')}
       onBlur={() => setFieldTouched('email')}
       />
@@ -44,7 +45,8 @@ const LoginPage = ({ navigation }) => {
       
 
       <TextInput style={MainStyles.input} 
-      placeholder="Password" secureTextEntry 
+      placeholder="Password" autoCapitalize={false}
+      secureTextEntry 
       value={values.password}
       onChangeText={handleChange('password')}
       onBlur={() => setFieldTouched('password')}
@@ -60,13 +62,16 @@ const LoginPage = ({ navigation }) => {
       </TouchableOpacity>
 
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Home')}} >
+      onPress={() => {navigation.navigate('Home')}} 
+      >
         <Text style={MainStyles.textColor}>Login</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Register')} >
         <Text>Sign up</Text>
       </TouchableOpacity> 
+
       <TouchableOpacity style={MainStyles.buttoninvis} 
       onPress={() => navigation.navigate('Landing')} >
         <Text>Home</Text>
