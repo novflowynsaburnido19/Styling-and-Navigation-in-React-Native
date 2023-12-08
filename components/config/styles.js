@@ -47,6 +47,9 @@ const MainStyles = {
       color: '#FF0000',
       height: 25,
     },
+    error: {
+      borderColor: '#FF0000',
+    },
    };
 
    export default MainStyles;
