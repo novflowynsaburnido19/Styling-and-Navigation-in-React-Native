@@ -43,10 +43,9 @@ const MainStyles = {
       height: 150,
       alignSelf: 'center',
     },
-    error: {
-      width: 250,
-      height: 150,
-      alignSelf: 'center',
+    errorTxt: {
+      color: '#FF0000',
+      height: 25,
     },
    };
 

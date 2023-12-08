@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 
 
 const SignupSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Please enter your email'),
+  email: Yup.string().email('Invalid email.').required('Please enter your email.'),
   password: Yup.string()
   .min(8)
   .required('Please enter your password.'),
@@ -16,6 +16,7 @@ const SignupSchema = Yup.object().shape({
 const LoginPage = ({ navigation }) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [seePassword, setSeePassword] = useState(true)
     const forgotPass = () => {console.log('forgot password is pressed');
     navigation.navigate('AccountRecovery');
     };
@@ -33,32 +34,33 @@ const LoginPage = ({ navigation }) => {
       <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       
       
-      <TextInput style={MainStyles.input} 
-      placeholder="Email" autoCapitalize={false}
+      <TextInput style={MainStyles.input}
+
+      placeholder="Email" 
       value={values.email}
       onChangeText={handleChange('email')}
       onBlur={() => setFieldTouched('email')}
       />
       {touched.email && errors.email && (
-        <Text style={styles.errorTxt}>{errors.email}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.email}</Text>
       )}
       
 
       <TextInput style={MainStyles.input} 
-      placeholder="Password" autoCapitalize={false}
-      secureTextEntry 
+      placeholder="Password" 
+      secureTextEntry={seePassword}
       value={values.password}
       onChangeText={handleChange('password')}
       onBlur={() => setFieldTouched('password')}
       />
       {touched.password && errors.password && (
-        <Text style={styles.errorTxt}>{errors.password}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.password}</Text>
       )}
     
 
       <TouchableOpacity style={styles.wrapperIcon}></TouchableOpacity>
       <TouchableOpacity onPress={forgotPass}>
-        <Text style={styles.forgotpassButton}>Forgot Password</Text>
+        <Text style={styles.forgotpassButton}>Forgot Password?</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={MainStyles.buttonvis} 

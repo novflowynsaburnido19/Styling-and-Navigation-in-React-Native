@@ -9,7 +9,7 @@ const SignupSchema = Yup.object().shape({
     .min(6, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Please enter your name.'),
-  email: Yup.string().email('Invalid email').required('Please enter your email address.'),
+  email: Yup.string().email('Invalid email.').required('Please enter your email address.'),
   password: Yup.string()
   .min(8)
   .required('Please enter your password.'),
@@ -36,36 +36,33 @@ const RegistrationPage = ({ navigation }) => {
       
       <TextInput style={MainStyles.input} 
       placeholder="Name"
-      autoCapitalize={false} 
       value={values.name}
       onChangeText={handleChange('name')}
       onBlur={() => setFieldTouched('name')}
       />
       {touched.name && errors.name && (
-        <Text style={styles.errorTxt}>{errors.name}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.name}</Text>
       )}
 
       <TextInput style={MainStyles.input} 
       placeholder="Email" 
-      autoCapitalize={false}
       value={values.email}
       onChangeText={handleChange('email')}
       onBlur={() => setFieldTouched('email')}
       />
       {touched.email && errors.email && (
-        <Text style={styles.errorTxt}>{errors.email}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.email}</Text>
       )}
 
       <TextInput style={MainStyles.input} 
       placeholder="Password" 
-      autoCapitalize={false}
       secureTextEntry 
       value={values.password}
       onChangeText={handleChange('password')}
       onBlur={() => setFieldTouched('password')}
       />
       {touched.password && errors.password && (
-        <Text style={styles.errorTxt}>{errors.password}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.password}</Text>
       )}
       
 

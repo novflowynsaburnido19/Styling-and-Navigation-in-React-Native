@@ -5,7 +5,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Please enter your email'),
+  email: Yup.string().email('Invalid email.').required('Please enter your email.'),
 });
 
 const AccountRecoveryPage = ({ navigation }) => {
@@ -24,13 +24,13 @@ const AccountRecoveryPage = ({ navigation }) => {
       <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       <Text style={styles.textTitle}>Restore Password</Text>
       <TextInput style={MainStyles.input} 
-      placeholder="Email" autoCapitalize={false}
+      placeholder="Email" 
       value={values.email}
       onChangeText={handleChange('email')}
       onBlur={() => setFieldTouched('email')}
       />
       {touched.email && errors.email && (
-        <Text style={styles.errorTxt}>{errors.email}</Text>
+        <Text style={MainStyles.errorTxt}>{errors.email}</Text>
       )}
       
 
