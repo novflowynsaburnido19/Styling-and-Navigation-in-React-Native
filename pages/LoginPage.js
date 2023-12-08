@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email.').required('Please enter your email.'),
   password: Yup.string()
-  .min(8)
+  .min(8, 'Password must be at least 8 characters.')
   .required('Please enter your password.'),
 });
 
@@ -28,7 +28,7 @@ const LoginPage = ({ navigation }) => {
       }}
       validationSchema={SignupSchema}
       >
-      {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit}) => (
+      {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit,dirty}) => (
 
     <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
@@ -64,9 +64,10 @@ const LoginPage = ({ navigation }) => {
       </TouchableOpacity>
 
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Home')}} 
+      onPress={() => {navigation.navigate('Home')}}
+      disabled={!isValid || !dirty}
       >
-        <Text style={MainStyles.textColor}>Login</Text>
+      <Text style={MainStyles.textColor}>Login</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={MainStyles.buttoninvis} 

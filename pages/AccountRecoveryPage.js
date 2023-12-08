@@ -18,7 +18,7 @@ const AccountRecoveryPage = ({ navigation }) => {
     }}
     validationSchema={SignupSchema}
     >
-    {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit}) => (
+    {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit,dirty}) => (
     
     <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
@@ -35,7 +35,9 @@ const AccountRecoveryPage = ({ navigation }) => {
       
 
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Login'); Alert.alert('Recovery code has been sent!') }} >
+      onPress={() => {navigation.navigate('Login'); Alert.alert('Recovery code has been sent!') }} 
+      disabled={!isValid || !dirty}
+      >
         <Text style={MainStyles.textColor}>Send Recovery Code</Text>
       </TouchableOpacity>
 

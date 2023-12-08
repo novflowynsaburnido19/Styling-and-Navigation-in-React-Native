@@ -11,7 +11,7 @@ const SignupSchema = Yup.object().shape({
     .required('Please enter your name.'),
   email: Yup.string().email('Invalid email.').required('Please enter your email address.'),
   password: Yup.string()
-  .min(8)
+  .min(8, 'Password must be at least 8 characters.')
   .required('Please enter your password.'),
 });
 
@@ -29,7 +29,7 @@ const RegistrationPage = ({ navigation }) => {
       }}
       validationSchema={SignupSchema}
       >
-      {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit}) => (
+      {({values,errors,touched,handleChange,setFieldTouched,isValid,handleSubmit,dirty}) => (
       <View style={MainStyles.container}>
       <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
       <Text style={styles.textTitle}>Create Account</Text>
@@ -67,7 +67,9 @@ const RegistrationPage = ({ navigation }) => {
       
 
       <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => {navigation.navigate('Home'); Alert.alert('Account successfully registered!') }} >
+      onPress={() => {navigation.navigate('Home'); Alert.alert('Account successfully registered!') }} 
+      disabled={!isValid || !dirty}
+      >
         <Text style={MainStyles.textColor}>Sign up</Text>
       </TouchableOpacity>
       <View style={styles.Bottom}>
