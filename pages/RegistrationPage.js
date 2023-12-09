@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, TextInput, View, Image, Alert, StyleSheet } fro
 import MainStyles from '../components/config/styles';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -14,6 +15,28 @@ const SignupSchema = Yup.object().shape({
   .min(8, 'Password must be at least 8 characters.')
   .required('Please enter your password.'),
 });
+
+const handleRegister = async () => {
+  try {
+    const response = await axios.post('http://192.168.1.66:3000', {
+      name,
+      email,
+      password,
+    });
+
+    console.log(response.data);
+
+    // Assuming your Laravel API returns a message on successful registration
+    Alert.alert('Success', 'Registration successful');
+
+    // You can navigate to the login screen or perform other actions here
+  } catch (error) {
+    console.error(error);
+
+    // Handle registration error
+    Alert.alert('Error', 'Registration failed. Please try again.');
+  }
+};
 
 const RegistrationPage = ({ navigation }) => {
     const [name, setName] = React.useState('');
