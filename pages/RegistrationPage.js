@@ -5,6 +5,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too Short!')
@@ -18,7 +19,7 @@ const SignupSchema = Yup.object().shape({
 
 const handleRegister = async () => {
   try {
-    const response = await axios.post('http://192.168.1.66:3000', {
+    const response = await axios.post('http://192.168.1.66:3000/api/register', {
       name,
       email,
       password,

@@ -16,7 +16,7 @@ const SignupSchema = Yup.object().shape({
 
 const handleRegister = async () => {
   try {
-    const response = await axios.post('http://192.168.1.66:3000/login', {
+    const response = await axios.post('http://192.168.1.66:3000/api/login', {
       email,
       password,
     });
