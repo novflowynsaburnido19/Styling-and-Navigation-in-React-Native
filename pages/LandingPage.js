@@ -16,7 +16,7 @@ const LandingPage = ({ navigation }) => {
       <Text style={styles.title}>Applications Development Emerging Technologies</Text>
       
       {/* Button with text and icon */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={[MainStyles.textColor, styles.buttonText]}>Click to Proceed</Text>
         <AntDesign name="arrowright" size={24} color="black" style={styles.icon} />
       </TouchableOpacity>
@@ -26,35 +26,37 @@ const LandingPage = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center', // Center content horizontally
+    alignItems: 'center', 
   },
   image: {
     width: 500,
     height: 200,
-    resizeMode: 'contain', // Maintain aspect ratio
+    resizeMode: 'contain', 
     marginBottom: 50,
   },
   title: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 50,
+    marginTop: -30,
     textAlign: 'center',
     color: 'black',
   },
   button: {
-    flexDirection: 'row', // Arrange children horizontally
-    alignItems: 'center', // Center children vertically
+    flexDirection: 'row', 
+    alignItems: 'center', 
     backgroundColor: 'white',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
+    marginTop: -10,
   },
   buttonText: {
     fontWeight: 'bold',
-    marginRight: 10, // Add spacing between text and icon
+    marginRight: 10, 
   },
   icon: {
-    marginLeft: 10, // Add spacing between text and icon
+    marginLeft: 10, 
   },
 });
 
