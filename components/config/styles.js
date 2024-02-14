@@ -40,8 +40,9 @@ const MainStyles = {
     },
     logo: {
       width: 250,
-      height: 150,
+      height: 270,
       alignSelf: 'center',
+      marginBottom: 7,
     },
     errorTxt: {
       color: '#FF0000',

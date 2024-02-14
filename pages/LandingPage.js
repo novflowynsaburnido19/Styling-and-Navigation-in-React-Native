@@ -10,12 +10,10 @@ const LandingPage = ({ navigation }) => {
       colors={['#13F1FC', '#0470DC']}
       style={[MainStyles.container, styles.container]}>
 
-      {/* Image component placed on top of text */}
       <Image style={styles.image} source={require('../assets/a.png')} />
 
       <Text style={styles.title}>Applications Development Emerging Technologies</Text>
       
-      {/* Button with text and icon */}
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={[MainStyles.textColor, styles.buttonText]}>Click to Proceed</Text>
         <AntDesign name="arrowright" size={24} color="black" style={styles.icon} />
@@ -52,7 +50,6 @@ const styles = StyleSheet.create({
     marginTop: -10,
   },
   buttonText: {
-    fontWeight: 'bold',
     marginRight: 10, 
   },
   icon: {
