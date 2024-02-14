@@ -1,37 +1,60 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, View, Image, Text } from 'react-native';
 import MainStyles from '../components/config/styles';
-
+import { AntDesign } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const LandingPage = ({ navigation }) => {
-    return (
-    <View style={MainStyles.container}>
-      <Image style={MainStyles.logo} source={require('../assets/flow.png')} />
-      <TouchableOpacity style={MainStyles.buttonvis} 
-      onPress={() => navigation.navigate('Login')}>
-        <Text style={MainStyles.textColor}>Login</Text>
+  return (
+    <LinearGradient
+      colors={['#13F1FC', '#0470DC']}
+      style={[MainStyles.container, styles.container]}>
+
+      {/* Image component placed on top of text */}
+      <Image style={styles.image} source={require('../assets/a.png')} />
+
+      <Text style={styles.title}>Applications Development Emerging Technologies</Text>
+      
+      {/* Button with text and icon */}
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
+        <Text style={[MainStyles.textColor, styles.buttonText]}>Click to Proceed</Text>
+        <AntDesign name="arrowright" size={24} color="black" style={styles.icon} />
       </TouchableOpacity>
-      <TouchableOpacity style={MainStyles.buttoninvis} 
-      onPress={() => navigation.navigate('Register')}>
-        <Text>Sign up</Text>
-      </TouchableOpacity>
-    </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  textTitle:{
-    fontSize: 28,
-    fontWeight: '800',
-    color: '#000',
-    textAlign: 'center',
-    marginBottom: 10,
+  container: {
+    alignItems: 'center', // Center content horizontally
   },
-  textBody:{
+  image: {
+    width: 500,
+    height: 200,
+    resizeMode: 'contain', // Maintain aspect ratio
+    marginBottom: 50,
+  },
+  title: {
     fontSize: 16,
-    color: '#000',
+    fontWeight: 'bold',
+    marginBottom: 50,
     textAlign: 'center',
-    marginBottom: 40,
+    color: 'black',
+  },
+  button: {
+    flexDirection: 'row', // Arrange children horizontally
+    alignItems: 'center', // Center children vertically
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontWeight: 'bold',
+    marginRight: 10, // Add spacing between text and icon
+  },
+  icon: {
+    marginLeft: 10, // Add spacing between text and icon
   },
 });
 

@@ -6,7 +6,7 @@ const MainStyles = {
       backgroundColor: '#ecf0f1',
     },
     textColor: {
-      color: 'white',
+      color: 'black',
     },
     input: {
       height: 50,
@@ -17,7 +17,7 @@ const MainStyles = {
       borderRadius: 5,
     },
     buttonvis: {
-      backgroundColor: '#000',
+      backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
       marginVertical: 8,
