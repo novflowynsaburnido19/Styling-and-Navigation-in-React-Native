@@ -12,7 +12,7 @@ const LandingPage = ({ navigation }) => {
 
       <Image style={styles.image} source={require('../assets/a.png')} />
 
-      <Text style={styles.title}>Applications Development Emerging Technologies</Text>
+      <Text style={styles.title}>Applications Development and Emerging Technologies</Text>
       
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={[MainStyles.textColor, styles.buttonText]}>Click to Proceed</Text>
